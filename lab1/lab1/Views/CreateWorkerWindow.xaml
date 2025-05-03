@@ -1,0 +1,22 @@
+﻿<Window x:Class="lab1.Views.CreateWorkerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab1.Views"
+        mc:Ignorable="d"
+        Title="CreateWorkerWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="FirstNameBox" HorizontalAlignment="Left" Height="30" Margin="322,83,0,0" VerticalAlignment="Top" Width="180"/>
+        <Label Content="First Name" HorizontalAlignment="Left" Height="30" Margin="244,83,0,0" VerticalAlignment="Top"/>
+
+        <TextBox x:Name="LastNameBox" HorizontalAlignment="Left" Height="30" Margin="322,118,0,0" VerticalAlignment="Top" Width="180"/>
+        <Label Content="Last Name" HorizontalAlignment="Left" Height="30" Margin="244,118,0,0" VerticalAlignment="Top"/>
+
+        <TextBox x:Name="YearBox" HorizontalAlignment="Left" Height="30" Margin="322,153,0,0" VerticalAlignment="Top" Width="180"/>
+        <Label Content="Year" HorizontalAlignment="Left" Height="30" Margin="244,153,0,0" VerticalAlignment="Top"/>
+
+        <Button Content="Add" HorizontalAlignment="Left" Height="36" Margin="362,274,0,0" VerticalAlignment="Top" Width="100"  Click="Save_Click"/>
+
+    </Grid>
+</Window>
