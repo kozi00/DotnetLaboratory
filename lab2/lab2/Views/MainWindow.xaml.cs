@@ -16,6 +16,7 @@ namespace lab2.Views
             InitializeComponent();
             WorkerListView.ItemsSource = null;
             WorkerTreeView.ItemsSource = null;
+            ResultsGrid.ItemsSource = null;
         }
 
         private void GenerateData_Click(object sender, RoutedEventArgs e)
@@ -52,7 +53,16 @@ namespace lab2.Views
                 }
             }
         }
-
+        public void Query1_Click(object sender, RoutedEventArgs e)
+        {
+            var result = QueryHelper.Query1(_workers);
+            ResultsGrid.ItemsSource = result;
+        }
+        public void Query2_Click(object sender, RoutedEventArgs e)
+        {
+            var result = QueryHelper.Query2(_workers);
+            ResultsGrid.ItemsSource = result;
+        }
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             if (WorkerTreeView.SelectedItem is Worker toDelete)

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Printing;
 
 namespace lab2.Helpers
 {
@@ -10,6 +11,7 @@ namespace lab2.Helpers
         private static Random random = new Random();
         private static string[] names = { "John", "Jane", "Bob", "Alice", "Charlie", "Diana", "Eve", "Frank", "Grace", "Hank" };
         private static string[] surnames = { "Smith", "Johnson", "Williams", "Jones", "Brown", "Davis", "Miller", "Wilson", "Moore", "Taylor" };
+        private static string[] codes = {"434ds", "45tff", "fdsgd", "gfdg", "dfffg", "bvs33g", "dmnbg", "pkjpg", "2432sg", "kjfds" };
         public static ObservableCollection<Worker> Workers { get; } = new ObservableCollection<Worker>();
 
         public static Worker GenerateHierarchyTree()
@@ -34,7 +36,7 @@ namespace lab2.Helpers
             Array enumValues = Enum.GetValues(typeof(Status));
             Status randomStatus = (Status)enumValues.GetValue(random.Next(enumValues.Length));
 
-            var task = new WorkerTask(random.Next(1, 11), (random.NextDouble() + 1.0) * 10.0, randomStatus);
+            var task = new WorkerTask(random.Next(1, 11), random.Next(10, 100), randomStatus, codes[random.Next(codes.Length)]);
             var worker = new Worker(
                 firstName,
                 lastName,

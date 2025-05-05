@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:lab2.Models"
         xmlns:av="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="av" x:Class="lab2.Views.MainWindow"
-        Title="Worker Viewer" Height="500" Width="800">
+        Title="Worker Viewer" Height="800" Width="800">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Application">
@@ -11,6 +11,10 @@
                 <MenuItem Header="Version" Click="ShowVersion_Click"/>
                 <Separator/>
                 <MenuItem Header="Exit" Click="Exit_Click"/>
+            </MenuItem>
+            <MenuItem Header="Query">
+                <MenuItem Header="Query 1" Click="Query1_Click"/>
+                <MenuItem Header="Query 2" Click="Query2_Click"/>
             </MenuItem>
         </Menu>
 
@@ -20,7 +24,7 @@
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
 
-            <ListView x:Name="WorkerListView" Margin="5" 
+            <ListView x:Name="WorkerListView" Margin="5,5,5,250" 
                       ScrollViewer.VerticalScrollBarVisibility="Auto">
                 <ListView.View>
                     <GridView>
@@ -33,7 +37,7 @@
             </ListView>
 
             <TreeView x:Name="WorkerTreeView" Grid.Column="1"
-                      Margin="5">
+                      Margin="5,5,5,250">
                 <TreeView.Resources>
                     <HierarchicalDataTemplate DataType="{x:Type local:Worker}"
                                               ItemsSource="{Binding Subordinates}">
@@ -48,9 +52,8 @@
                     </HierarchicalDataTemplate>
                 </TreeView.Resources>
             </TreeView>
-
-
-
+            <DataGrid Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="205" Margin="8,524,0,0" VerticalAlignment="Top" 
+                      Width="782" x:Name="ResultsGrid" AutoGenerateColumns="True"/>
         </Grid>
     </DockPanel>
 </Window>
